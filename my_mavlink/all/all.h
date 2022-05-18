@@ -1,0 +1,70 @@
+/** @file
+ *  @brief MAVLink comm protocol generated from all.xml
+ *  @see http://mavlink.org
+ */
+#pragma once
+#ifndef MAVLINK_ALL_H
+#define MAVLINK_ALL_H
+
+#ifndef MAVLINK_H
+    #error Wrong include order: MAVLINK_ALL.H MUST NOT BE DIRECTLY USED. Include mavlink.h from the same directory instead or set ALL AND EVERY defines from MAVLINK.H manually accordingly, including the #define MAVLINK_H call.
+#endif
+
+#undef MAVLINK_THIS_XML_HASH
+#define MAVLINK_THIS_XML_HASH -2600994857153820246
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+// MESSAGE LENGTHS AND CRCS
+
+#ifndef MAVLINK_MESSAGE_LENGTHS
+#define MAVLINK_MESSAGE_LENGTHS {}
+#endif
+
+#ifndef MAVLINK_MESSAGE_CRCS
+#define MAVLINK_MESSAGE_CRCS {{0, 50, 9, 9, 0, 0, 0}, {300, 217, 22, 22, 0, 0, 0}, {17001, 126, 12, 12, 0, 0, 0}}
+#endif
+
+#include "../protocol.h"
+
+#define MAVLINK_ENABLED_ALL
+
+// ENUM DEFINITIONS
+
+
+
+// MAVLINK VERSION
+
+#ifndef MAVLINK_VERSION
+#define MAVLINK_VERSION 2
+#endif
+
+#if (MAVLINK_VERSION == 0)
+#undef MAVLINK_VERSION
+#define MAVLINK_VERSION 2
+#endif
+
+// MESSAGE DEFINITIONS
+
+
+// base include
+#include "../minimal/minimal.h"
+#include "../my_info/my_info.h"
+
+#undef MAVLINK_THIS_XML_HASH
+#define MAVLINK_THIS_XML_HASH -2600994857153820246
+
+#if MAVLINK_THIS_XML_HASH == MAVLINK_PRIMARY_XML_HASH
+# define MAVLINK_MESSAGE_INFO {MAVLINK_MESSAGE_INFO_HEARTBEAT, MAVLINK_MESSAGE_INFO_PROTOCOL_VERSION, MAVLINK_MESSAGE_INFO_my_info}
+# define MAVLINK_MESSAGE_NAMES {{ "HEARTBEAT", 0 }, { "PROTOCOL_VERSION", 300 }, { "my_info", 17001 }}
+# if MAVLINK_COMMAND_24BIT
+#  include "../mavlink_get_info.h"
+# endif
+#endif
+
+#ifdef __cplusplus
+}
+#endif // __cplusplus
+#endif // MAVLINK_ALL_H
